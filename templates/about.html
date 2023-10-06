@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="about-us-section">
+    <div class="body">
+        <div class="about-wrapper">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <ul class="carousel">
+                {% for dish in menu %}
+                <li class="card">
+                    <div class="img"><img src="{{ dish.image }}" alt="img" draggable="false"></div>
+                    <h2>{{ dish.name }}</h2>
+                </li>
+                {% endfor %}
+            </ul>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+    </div>
+    <div class="about-container">
+        <div class="panel-body">
+            <div class="top">
+                <div class="panel-left">
+                    <img src="" alt="">
+                    <h1><span class="green">FUEL YOUR LIFE WITH GOODNESS!</span></h1>
+                    <p>At Simply Chef, we're dedicated to creating a brighter future. We're passionate about delivering
+                        dishes
+                        and products that are not only delicious but also healthy by default, making it easier for our
+                        customers to prioritize their well-being. Additionally, we're constantly working on expanding
+                        our
+                        sustainable menu options, ensuring that every ingredient we use leaves a lighter environmental
+                        footprint. We believe that by making mindful food choices, we can all contribute to a healthier
+                        world.</p>
+                </div>
+                <div class="panel-right">
+                    <img src="" alt="">
+                    <h1><span class="green">ALTER THE OUTCOME</span></h1>
+                    <p>Simply Chef, a global company founded by Jamie Cartmell, is on a mission to empower people like
+                        you
+                        to
+                        lead healthier, happier lives. We recognize that maintaining a healthy lifestyle can be
+                        challenging,
+                        and that's why we focus on food as one of the most impactful lifestyle choices. We're here to
+                        make
+                        it easier for you to consistently enjoy nutritious and delicious meals, so you can savor the
+                        benefits of a healthier life.</p>
+                </div>
+            </div>
+            <div class="middle">
+                <h1><span class="green">Simply Chef - A Culinary Journey Guided by Passion and Care</span></h1>
+                <br>
+                <p> Founded at the beginning of 2023, Simply Chef is the result of the
+                    relentless dedication and passion, Jamie Cartmell. My journey began
+                    with a deep-seated commitment to our customers and a shared sense of duty to make a
+                    difference in
+                    their lives.
+                    <br><br>
+                    I embarked on this adventure from a 'humble' start, where long nights and seven-day
+                    workweeks were
+                    our steadfast companions. This hands-on approach allowed us to remain intricately
+                    connected not only
+                    to our customers but also to our valued suppliers and the very heart of our operations.
+                    <br><br>
+                    At Simply Chef, we care deeply about the experiences you have with us. It's a commitment
+                    we take
+                    seriously, which is why we continually reinvest every ounce of our energy and resources
+                    into
+                    enhancing your journey with us. We believe that food is not just sustenance; it's a
+                    powerful
+                    lifestyle choice that has a profound impact on your well-being.
+                    <br><br>
+                    Today, Simply Chef has risen to become a global meal delivery service. As we pen this
+                    message,
+                    our offerings stand as a testament to our unwavering commitment to quality and
+                    excellence. We boast
+                    the largest and most diverse menu, prioritizing local, top-quality ingredients. Our
+                    mission is to
+                    provide you with healthier options, unrivaled variety, unmatched flexibility, and
+                    seamless customer
+                    support that's just a message away.
+                    <br><br>
+                    Our core focus remains on our products, and we vow to deliver nothing short of
+                    first-class service.
+                    We welcome your feedback and are eager to hear from you. If there's anything we can do
+                    to elevate
+                    your experience, please reach out to us at simply@chef.ie.
+                    <br><br>
+                    We are excited and genuinely look forward to sharing our culinary journey with you,
+                    because at
+                    Simply Chef, we don't just provide meals – we invite you to savor a healthier, happier
+                    life, one
+                    delicious dish at a time.
+                    <br><br>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

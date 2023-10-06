@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/styles.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <title>Simply Chef</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Simply Chef</div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <a href="{{ url_for('home') }}" class="active">Home</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('about') }}">About</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('menu') }}">Menu</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('works') }}">How It Works</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('login') }}">Login</a>
+                </li>
+                <li>
+                    <i class='bx bxs-cart' style='color:#000000' id="cart-icon"></i>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
+    <footer>
+        <div class="footer-content">
+            <h3>Simply Chef</h3>
+            <p>Eliminate the inconvenience and anxiety of dinner preparation by receiving a weekly delivery of all the
+                necessary ingredients, accompanied by straightforward, step-by-step recipe cards, conveniently sent to
+                your home or workplace.</p>
+            <ul class="socials">
+                <li><a href="#"><i class='bx bxl-facebook'></i></a></li>
+                <li><a href="#"><i class='bx bxl-instagram'></i></a></li>
+                <li><a href="#"><i class='bx bxl-tiktok'></i></a></li>
+                <li><a href="#"><i class='bx bxl-youtube'></i></a></li>
+                <li><a href="#"><i class='bx bxl-meta'></i></a></li>
+            </ul>
+            <div class="footer-bottom">
+                <p>Designed By - Jamie Cartmell</p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+<script src="static/script.js "></script>
+
+</html>

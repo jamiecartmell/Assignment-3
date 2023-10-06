@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block main %}
+<!-- <div class="login-body"> -->
+<div class="wrapper">
+    <h1>Login</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="flash-messages">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+    <form class="form" method="post" action="/login_validation">
+        <input type="email" class="form-control" placeholder="name@example.ie" name="email"><br>
+        <input type="password" class="form-control" placeholder="Password" name="password"><br>
+        <div class="recover">
+            <a href="#">Forgot Password?</a>
+        </div>
+        <input type="submit" class="button" value="Login">
+    </form>
+
+    <div class="member">
+        Not a member? <a href="/register">Register Now</a> </div>
+</div>
+
+<!-- </div> -->
+
+
+{% endblock %}

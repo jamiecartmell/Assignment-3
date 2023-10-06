@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block main %}
+<section class="banner-section">
+    <div class="banner">
+        <!-- <img src="/static/images/Logo/Banner.jpg" alt=""> -->
+        <div class="container">
+            <div class="banner-content">
+                <h1>THE SMARTEST WAY TO COOK A HEALTHY DINNER
+                </h1>
+                <a href="{{ url_for('about') }}" class="btn-hero">About</a>
+                <a href="{{ url_for('login') }}" class="btn-hero">Get Started</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="working-container">
+    <div class="row">
+        <div class="header">
+            <h1> HOW IT <span class="green">WORKS</span></h1>
+            <p>
+                Eliminate the inconvenience and anxiety of dinner preparation by receiving a weekly delivery of all the
+                necessary ingredients, accompanied by straightforward, step-by-step recipe cards, conveniently sent to
+                your home or workplace.
+            </p>
+        </div>
+        <div class="content">
+            <div class="card">
+                <div class="image-round"></div>
+                <img src="/static/images/works/Choices.png" alt="">
+                <h4>STEP 1:<span class="green">You</span> choose</h4>
+                <p>
+                    Select a plan that suits your family. Pick from a rotating selection of over 20
+                    fresh recipes each week. Enjoy the flexibility to pause, skip, or cancel your subscription at any
+                    time.</p>
+            </div>
+            <div class="card-2">
+                <img src="/static/images/works/Delivey.png" alt="">
+                <h4>STEP 2:<span class="green">We</span> deliver</h4>
+                <p>Enjoy flexible delivery at your chosen location and time. No need to be home? Rest assured, our
+                    innovative packaging will maintain freshness until your return.</p>
+            </div>
+            <div class="card">
+                <img src="/static/images/works/Cook.png" alt="">
+                <h4>STEP 3:<span class="green">You</span> cook</h4>
+                <p>You'll recieve your step by step recipe cards & pre-portioned ingredients mean you’ll be cooking up
+                    tasty dinners in less
+                    than 30 minutes</p>
+            </div>
+        </div>
+        <div class="working-button">
+            <a href="{{ url_for('works') }}" class="btn-hero">How It Works</a>
+        </div>
+    </div>
+</div>
+
+<div class="menu-contaniner">
+    <div class="weekly-menu">
+        <div class="menu-header">
+            <h1>This Weeks Dishes</h1>
+            <div class="menu-wrapper">
+                <button onclick="filterDishes('all')" class="btn-hero">Show All</button>
+                <button onclick="filterDishes('classic')" class="btn-hero">Classic Plan</button>
+                <button onclick="filterDishes('plant-based')" class="btn-hero">Plant-Based Plan</button>
+                <button onclick="filterDishes('family')" class="btn-hero">Family Plan</button>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="box-container">
+                {% for dish in menu %}
+                <div class="card-box" data-plans="{{ dish.plans }}">
+                    <img src="{{ dish.image }}" alt="{{ dish.name }}" class="product-image">
+                    <h1>{{ dish.name }}</h1>
+                    <p><strong>Time:</strong> {{ dish.time }} minutes</p>
+                    <p><strong>Description:</strong> {{ dish.description }}</p>
+                    <p><strong>Calories:</strong> {{ dish.calories }}</p>
+                    <p><strong>Carbohydrates:</strong> {{ dish.carbohydrates }}g</p>
+                    <p><strong>Protein:</strong> {{ dish.protein }}g</p>
+                    <p><strong>Fat:</strong> {{ dish.fat }}g</p>
+                    <p><strong>Allergens:</strong> {{ dish.allergens }}</p>
+                    <!-- <a href="#" class="btn-hero">FAMILY PLAN</a> -->
+                    <!-- <div class="plan-buttons">
+                        {% for plan in dish.plans.split(",") %}
+                        <a href="#" class="btn-hero">{{ plan }}</a>
+                        {% endfor %}
+                    </div> -->
+
+                </div>
+                {% endfor %}
+            </div>
+        </div> <a href="{{ url_for('works')}}" class="btn-hero">Meal Kits</a>
+    </div>
+</div>
+
+{% endblock %}
