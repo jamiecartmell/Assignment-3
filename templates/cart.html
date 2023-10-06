@@ -1,3 +1,9 @@
 {% block main %}
-
+<h1>Your Cart</h1>
+<ul>
+    {% for dish in cart %}
+    <li>{{ dish.name }} - ${{ dish.price }}</li>
+    {% endfor %}
+</ul>
+<p>Total Price: ${{ total_price }}</p>
 {% endblock %}

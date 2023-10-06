@@ -203,22 +203,22 @@ def checkout():
     return render_template("checkout.html")
 
 
-def process_form_data(
-    full_name,
-    email,
-    address,
-    city,
-    state,
-    zip_code,
-    card_number,
-    exp_month,
-    exp_year,
-    cvv,
-):
-    # Process and store the form data as needed
-    print(
-        f"Processing Form Data: {full_name}, {email}, {address}, {city}, {state}, {zip_code}, {card_number}, {exp_month}, {exp_year}, {cvv}"
-    )
+# def process_form_data(
+#     full_name,
+#     email,
+#     address,
+#     city,
+#     state,
+#     zip_code,
+#     card_number,
+#     exp_month,
+#     exp_year,
+#     cvv,
+# ):
+#     # Process and store the form data as needed
+#     print(
+#         f"Processing Form Data: {full_name}, {email}, {address}, {city}, {state}, {zip_code}, {card_number}, {exp_month}, {exp_year}, {cvv}"
+#     )
 
 
 @app.route("/checkout", methods=["GET", "POST"])
