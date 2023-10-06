@@ -1,7 +1,8 @@
 Flask
-request
 redirect
+render_template
 url_for
 session
 flash
+request
 gunicorn
