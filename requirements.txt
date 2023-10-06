@@ -1,5 +1,4 @@
 Flask
-# jsonify
 render_template
 request
 redirect
