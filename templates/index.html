@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block main %}
+
 <section class="banner-section">
     <div class="banner">
-        <!-- <img src="/static/images/Logo/Banner.jpg" alt=""> -->
         <div class="container">
             <div class="banner-content">
-                <h1>THE SMARTEST WAY TO COOK A HEALTHY DINNER
+                <h1>THE <span class="green">SMARTEST</span> WAY TO COOK A <span class="green">HEALTHY</span> DINNER
                 </h1>
                 <a href="{{ url_for('about') }}" class="btn-hero">About</a>
-                <a href="{{ url_for('login') }}" class="btn-hero">Get Started</a>
+                <a href="{{ url_for('menu') }}" class="btn-hero">Get Started</a>
             </div>
         </div>
     </div>
@@ -80,17 +80,14 @@
                     <p><strong>Protein:</strong> {{ dish.protein }}g</p>
                     <p><strong>Fat:</strong> {{ dish.fat }}g</p>
                     <p><strong>Allergens:</strong> {{ dish.allergens }}</p>
-                    <!-- <a href="#" class="btn-hero">FAMILY PLAN</a> -->
-                    <!-- <div class="plan-buttons">
-                        {% for plan in dish.plans.split(",") %}
-                        <a href="#" class="btn-hero">{{ plan }}</a>
-                        {% endfor %}
-                    </div> -->
-
                 </div>
                 {% endfor %}
             </div>
-        </div> <a href="{{ url_for('works')}}" class="btn-hero">Meal Kits</a>
+        </div>
+        <div class="meal-button">
+            <a href="{{ url_for('menu') }}" class="btn-hero">Get Started</a>
+        </div>
+        <!-- <a href="{{ url_for('works')}}" class="btn-hero">Meal Kits</a> -->
     </div>
 </div>
 

@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 
 {% block main %}
+<div class="about-us-header">
+    <h1>HOW IT WORKS</h1>
+</div>
 <div class="working-section">
     <div class="content">
         <div class="card">
             <img src="/static/images/works/Choices.png" alt="">
-            <h4><span class="orange">STEP 1: </span>YOU choose</h4>
+            <h4><span class="green">STEP 1: </span>YOU choose</h4>
             <p>
                 Select a plan that suits your family. Pick from a rotating selection of over 20
                 fresh recipes each week. Enjoy the flexibility to pause, skip, or cancel your subscription at any
@@ -13,18 +16,19 @@
         </div>
         <div class="card">
             <img src="/static/images/works/Delivey.png" alt="">
-            <h4><span class="orange">STEP 2: </span>WE deliver</h4>
+            <h4><span class="green">STEP 2: </span>WE deliver</h4>
             <p>Enjoy flexible delivery at your chosen location and time. No need to be home? Rest assured, our
                 innovative packaging will maintain freshness until your return.</p>
         </div>
         <div class="card">
             <img src="/static/images/works/Cook.png" alt="">
-            <h4><span class="orange">STEP 3: </span>YOU cook</h4>
+            <h4><span class="green">STEP 3: </span>YOU cook</h4>
             <p>Step by step recipe cards & pre-portioned ingredients mean you’ll be cooking up tasty dinners in less
                 than 30 minutes</p>
         </div>
     </div>
-    <div class="hiw-section">
+</div>
+<!-- <div class="hiw-section">
         <div class="recipe-container">
             <img src="/static/images/HIW/Healthy.png" alt="">
 
@@ -78,14 +82,79 @@
                     Our insulated box keeps your food fresh until you get home</p>
             </div>
         </div>
+    </div> -->
+
+<div class="works-section">
+    <div class="hiw-container">
+        <div class="works-post">
+            <div class="works-post-img">
+                <img src="/static/images/HIW/Healthy.png" alt="">
+            </div>
+            <div class="works-info">
+                <h1 class="works-title">Healthy Recipes</h1>
+                <p class="works-text">
+                    -Select from a rotating selection of more than 10 exciting new recipes every week.<br>
+                    -Simple and Easy to follow step-by-step recipe.<br>
+                    -Crafted by our dedicated in-house dietitian for optimal nutritional balance.<br>
+                    -Acquire fresh culinary techniques and uncover new beloved recipes.<br>
+                    -Suitable for cooks of all skill levels.<br>
+            </div>
+        </div>
+
+        <div class="works-post">
+            <div class="works-post-img">
+                <img src="/static/images/HIW/Ingredients.png" alt="">
+            </div>
+            <div class="works-info">
+                <h1 class="works-title">Ingredients</h1>
+                <p class="works-text">
+                    -Fresh, in-season produce sourced directly from local farms.<br>
+                    -Locally Sourced.<br>
+                    -Discover new and interesting ingredients.<br>
+                    -Diversify your diet with a wider range of options.<br>
+                </p>
+            </div>
+        </div>
+
+        <div class="works-post">
+            <div class="works-post-img">
+                <img src="/static/images/HIW/Versatile.png" alt="">
+            </div>
+            <div class="works-info">
+                <h1 class="works-title">Versatile Plans</h1>
+                <p class="works-text">
+                    -Customize your recipe selections each week to match your preferences.<br>
+                    -You have the flexibility to skip weeks, switch recipes, and cancel at any time without any
+                    long-term
+                    commitments.<br>
+                    -Cook anywhere from twice a week to every night.<br>
+                    -Starting from 6 eauro per serving.<br>
+                </p>
+            </div>
+        </div>
+
+        <div class="works-post">
+            <div class="works-post-img">
+                <img src="/static/images/HIW/Delivery.png" alt="">
+            </div>
+            <div class="works-info">
+                <h1 class="works-title">Healthy Recipe</h1>
+                <p class="works-text">
+                    -We deliver to 100% of the Republic of Ireland & Northern Ireland.<br>
+                    -Your box is hand-packed and delivered via our fulfilment team & local couriers<br>
+                    -Crafted by our dedicated in-house dietitian for optimal nutritional balance.<br>
+                    -Our insulated box keeps your food fresh until you get home<br>
+                    -No need to be home. Your Simply Chef delivery will be left in a safe & discreet place<br>
+                </p>
+            </div>
+        </div>
     </div>
-
-    <div class="working-button">
-        <a href="{{ url_for('menu') }}" class="btn-hero">How It Works</a>
-    </div>
-
-
+</div>
+<div class="working-button">
+    <a href="{{ url_for('menu') }}" class="btn-hero">How It Works</a>
+</div>
 
 
 
-    {% endblock %}
+
+{% endblock %}
