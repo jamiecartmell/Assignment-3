@@ -37,7 +37,7 @@ header {
 }
 
 #cart-icon {
-    font-size: 40px;
+    font-size: 25px;
     cursor: pointer;
 }
 
@@ -57,7 +57,7 @@ header {
 
 .nav-bar ul li a {
     display: block;
-    color: #363434;
+    color: var(--text-color);
     font-size: 20px;
     padding: 10px 25px;
     border-radius: 8px;
@@ -102,7 +102,7 @@ header {
         left: 0;
         right: 0;
         width: 100vw;
-        background: #11101b;
+        background: var(--secondary-color);
         transition: 0.2s;
         overflow: hidden;
     }
@@ -527,10 +527,6 @@ Home Working Section
     padding: 0 1.5rem;
 }
 
-/* .hiw-container {
-    align-items: center;
-} */
-
 .works-post {
     max-width: 98rem;
     padding: 40px;
@@ -572,13 +568,14 @@ Home Working Section
     font-size: 2.5rem;
     margin: 1.5rem 0 2rem;
     text-transform: uppercase;
-    color: #4facfe;
+    color: var(--accent);
 }
 
 .works-text {
     margin-bottom: 3rem;
     font-size: 1.4rem;
-    color: #000000b3;
+    color: var(--text-color);
+    line-height: 50px
 }
 
 @media screen and (max-width: 1068px) {
@@ -630,6 +627,10 @@ Home Working Section
         margin-top: 35px;
         margin-left: 142px;
     }
+}
+
+.working-button {
+    padding-bottom: 30px;
 }
 
 /* =================

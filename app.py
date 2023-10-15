@@ -177,7 +177,8 @@ def about():
 
 @app.route("/menu")
 def menu():
-    return render_template("menu.html", menu=my_menu)
+    cart = session.get("cart", [])
+    return render_template("menu.html", menu=my_menu, cart=cart)
 
 
 @app.route("/works")
@@ -195,9 +196,9 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/cart")
-def cart():
-    return render_template("cart.html")
+# @app.route("/cart")
+# def cart():
+#     return render_template("cart.html")
 
 
 @app.route("/checkout")
@@ -297,6 +298,39 @@ def add_user():
 def logout():
     session.pop("email", None)
     return redirect("/login")
+
+
+@app.route("/add_to_cart/<dish_name>")
+def add_to_cart(dish_name):
+    print(f"Adding {dish_name} to the cart.")
+    # Initialize cart in the session if not already present
+    if "cart" not in session:
+        session["cart"] = []
+
+    # Check if the dish is already in the cart
+    for item in session["cart"]:
+        if item["name"] == dish_name:
+            item["quantity"] += 1
+            break
+    else:
+        # If the dish is not in the cart, add it
+        session["cart"].append({"name": dish_name, "quantity": 1})
+
+    return redirect("/menu")
+
+
+@app.route("/remove_from_cart/<dish_name>")
+def remove_from_cart(dish_name):
+    # Remove the item from the cart in the session
+    session["cart"] = [item for item in session["cart"] if item["name"] != dish_name]
+
+    return redirect("/cart")
+
+
+@app.route("/cart")
+def cart():
+    cart = session.get("cart", [])
+    return render_template("cart.html", cart=cart)
 
 
 if __name__ == "__main__":

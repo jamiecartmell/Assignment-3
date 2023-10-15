@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 
 {% block main %}
-<!-- <div class="menu-contaniner">
-    <div class="weekly-menu"> -->
 <div class="menu_section">
     <div class="menu-container-header">
         <h1>This Weeks Dishes</h1>
@@ -21,17 +19,17 @@
                 <img src="{{ dish.image }}" alt="{{ name }}" class="product-image">
                 <h1>{{ dish.name }}</h1>
                 <p><strong>Time:</strong> {{ dish.time }} minutes</p>
-                <!-- <p><strong>Description:</strong> {{ dish.description }}</p> -->
                 <p><strong>Calories:</strong> {{ dish.calories }}</p>
                 <p><strong>Carbohydrates:</strong> {{ dish.carbohydrates }}g</p>
                 <p><strong>Protein:</strong> {{ dish.protein }}g</p>
                 <p><strong>Fat:</strong> {{ dish.fat }}g</p>
                 <p><strong>Allergens:</strong> {{ dish.allergens }}</p>
-                <!-- <a href="#" class="btn-hero">FAMILY PLAN</a> -->
-                <a href="#" class="btn-hero">Select</a>
+                <!-- <a href="#" class="btn-hero">Select</a> -->
+                <a href="{{ url_for('add_to_cart', dish_name=dish.name) }}" class="btn-hero">Add to Cart</a>
             </div>
             {% endfor %}
         </div>
     </div>
 </div>
+
 {% endblock %}
