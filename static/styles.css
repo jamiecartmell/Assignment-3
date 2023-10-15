@@ -44,7 +44,6 @@ header {
 .logo {
     font-size: 50px;
     font-weight: bold;
-    /* color: var(--primary-color); */
 }
 
 .hamburger {
@@ -222,7 +221,6 @@ footer {
 }
 
 .footer-bottom {
-    /* background: #000; */
     padding: 10px;
     text-align: center;
 }
@@ -243,9 +241,6 @@ footer {
 /* ==================
     Hero Section
 ===================== */
-/* .banner-section {
-    background-color: var(--background);
-} */
 
 .banner {
     background-image: url(/static/images/Logo/Banner.jpg);
@@ -485,11 +480,6 @@ Home Working Section
     transform: scale(1.05);
 }
 
-/* .menu-container .weekly-menu .btn-hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 .meal-button {
     display: flex;
     justify-content: center;
@@ -553,16 +543,6 @@ Home Working Section
     display: block;
 }
 
-/* .works-post-img img::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-shadow: .5rem .5rem 3rem 1px rgba(0, 0, 0, 0.5);
-    border-radius: .8rem;
-} */
 
 .works-title {
     font-size: 2.5rem;
@@ -859,15 +839,9 @@ input:focus {
 .carousel .card h2 {
     font-weight: 500;
     font-size: 1.56rem;
-    /* margin: 30px 0 5px; */
     text-align: center;
     margin-top: 30px;
 }
-
-/* .carousel .card span {
-    color: #6A6D78;
-    font-size: 1.31rem;
-} */
 
 @media screen and (max-width: 900px) {
     .about-wrapper .carousel {
@@ -883,11 +857,7 @@ input:focus {
 
 .about-container {
     background: var(--background);
-    /* margin-bottom: 40px; */
-    /* flex-direction: column; */
-    /* display: flex; */
 }
-
 
 .about-container .panel-body {
     background: var(--background);
@@ -969,6 +939,13 @@ input:focus {
 
 .menu_section .card-container .box-container .card-box {
     height: 640px;
+}
+
+.btn-cart {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ===============
@@ -1057,4 +1034,27 @@ input:focus {
     .checkout_section {
         overflow-x: hidden;
     }
+}
+
+/* ===========
+    Cart
+============== */
+.cart-section {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.btn-checkout {
+    margin-bottom: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cart-section h1 {
+    font-size: 50px;
 }

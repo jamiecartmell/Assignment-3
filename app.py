@@ -1,13 +1,3 @@
-# from flask import (
-#     Flask,
-#     # jsonify,
-#     render_template,
-#     request,
-#     redirect,
-#     url_for,
-#     session,
-#     flash,
-# )
 from flask import Flask, redirect, render_template, url_for, session, flash, request
 
 # app = Flask(__name__ , static_url_path="/static")
@@ -196,38 +186,32 @@ def register():
     return render_template("register.html")
 
 
-# @app.route("/cart")
-# def cart():
-#     return render_template("cart.html")
-
-
 @app.route("/checkout")
 def checkout():
     return render_template("checkout.html")
 
 
-# def process_form_data(
-#     full_name,
-#     email,
-#     address,
-#     city,
-#     state,
-#     zip_code,
-#     card_number,
-#     exp_month,
-#     exp_year,
-#     cvv,
-# ):
-#     # Process and store the form data as needed
-#     print(
-#         f"Processing Form Data: {full_name}, {email}, {address}, {city}, {state}, {zip_code}, {card_number}, {exp_month}, {exp_year}, {cvv}"
-#     )
+def process_form_data(
+    full_name,
+    email,
+    address,
+    city,
+    state,
+    zip_code,
+    card_number,
+    exp_month,
+    exp_year,
+    cvv,
+):
+    # Process and store the form data as needed
+    print(
+        f"Processing Form Data: {full_name}, {email}, {address}, {city}, {state}, {zip_code}, {card_number}, {exp_month}, {exp_year}, {cvv}"
+    )
 
 
 @app.route("/checkout", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        # Access form data
         full_name = request.form.get("full_name")
         email = request.form.get("email")
         address = request.form.get("address")
@@ -239,7 +223,6 @@ def index():
         exp_year = request.form.get("exp_year")
         cvv = request.form.get("cvv")
 
-        # Process form data using the function
         process_form_data(
             full_name,
             email,
@@ -252,7 +235,6 @@ def index():
             exp_year,
             cvv,
         )
-
     return render_template("checkout.html")
 
 
@@ -261,7 +243,6 @@ def login_validation():
     email = request.form.get("email")
     password = request.form.get("password")
 
-    # to check if the email provided matches
     if email in users and users[email] == password:
         session["user_email"] = email
         return render_template("menu.html")
@@ -276,11 +257,10 @@ def add_user():
     email = request.form.get("uemail")
     password = request.form.get("upassword")
     repassword = request.form.get("urepassowrd")
-    # if email in users:
-    #     return "Email already exists. Please use a different email"
-    # # Adding a new user to the database
-    # users[email] = password
-    # return redirect("/login")
+    if email in users:
+        return "Email already exists. Please use a different email"
+    users[email] = password
+    return redirect("/login")
     if email in users:
         flash("Email already exists. Please use a different email.", "error")
         return redirect("/register")
@@ -303,7 +283,6 @@ def logout():
 @app.route("/add_to_cart/<dish_name>")
 def add_to_cart(dish_name):
     print(f"Adding {dish_name} to the cart.")
-    # Initialize cart in the session if not already present
     if "cart" not in session:
         session["cart"] = []
 
@@ -313,7 +292,6 @@ def add_to_cart(dish_name):
             item["quantity"] += 1
             break
     else:
-        # If the dish is not in the cart, add it
         session["cart"].append({"name": dish_name, "quantity": 1})
 
     return redirect("/menu")
@@ -331,6 +309,16 @@ def remove_from_cart(dish_name):
 def cart():
     cart = session.get("cart", [])
     return render_template("cart.html", cart=cart)
+
+
+@app.route("/terms")
+def terms():
+    return render_template("terms.html")
+
+
+@app.route("/privacy")
+def privacy():
+    return render_template("privacy.html")
 
 
 if __name__ == "__main__":

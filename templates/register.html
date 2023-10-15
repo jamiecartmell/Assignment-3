@@ -1,7 +1,5 @@
 {% extends "base.html" %}
-
 {% block main %}
-<!-- <div class="login-body"> -->
 <div class="wrapper">
     <h1>Sign Up</h1>
     {% with messages = get_flashed_messages() %}
@@ -22,12 +20,8 @@
         <input type="checkbox" id="checkbox">
         <label for="checkbox">I agree to these <a href="#">Terms & Conditions</a></label>
     </div>
-
     <div class="member">
         Already a member? <a href="/login">Login Here</a>
     </div>
 </div>
-<!-- </div> -->
-
-
 {% endblock %}

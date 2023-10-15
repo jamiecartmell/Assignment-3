@@ -29,14 +29,12 @@ let isDragging = false,
   timeoutId;
 // Get the number of cards that can fit in the carousel at once
 let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
-// Insert copies of the last few cards to beginning of carousel for infinite scrolling
 carouselChildrens
   .slice(-cardPerView)
   .reverse()
   .forEach((card) => {
     carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
   });
-// Insert copies of the first few cards to end of carousel for infinite scrolling
 carouselChildrens.slice(0, cardPerView).forEach((card) => {
   carousel.insertAdjacentHTML("beforeend", card.outerHTML);
 });
@@ -58,7 +56,7 @@ const dragStart = (e) => {
   startScrollLeft = carousel.scrollLeft;
 };
 const dragging = (e) => {
-  if (!isDragging) return; // if isDragging is false return from here
+  if (!isDragging) return; // ifDragging is false retrn from here
   // Updates the scroll position of the carousel based on the cursor movement
   carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
 };

@@ -1,7 +1,6 @@
 {% extends "base.html" %}
-
 {% block main %}
-<!-- <div class="login-body"> -->
+
 <div class="wrapper">
     <h1>Login</h1>
     {% with messages = get_flashed_messages() %}
@@ -21,12 +20,7 @@
         </div>
         <input type="submit" class="button" value="Login">
     </form>
-
     <div class="member">
         Not a member? <a href="/register">Register Now</a> </div>
 </div>
-
-<!-- </div> -->
-
-
 {% endblock %}

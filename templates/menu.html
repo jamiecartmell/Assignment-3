@@ -11,7 +11,6 @@
             <button onclick="filterDishes('family')" class="btn-hero">Family Plan</button>
         </div>
     </div>
-
     <div class="card-container">
         <div class="box-container">
             {% for dish in menu %}
@@ -24,11 +23,13 @@
                 <p><strong>Protein:</strong> {{ dish.protein }}g</p>
                 <p><strong>Fat:</strong> {{ dish.fat }}g</p>
                 <p><strong>Allergens:</strong> {{ dish.allergens }}</p>
-                <!-- <a href="#" class="btn-hero">Select</a> -->
                 <a href="{{ url_for('add_to_cart', dish_name=dish.name) }}" class="btn-hero">Add to Cart</a>
             </div>
             {% endfor %}
         </div>
+    </div>
+    <div class="btn-cart">
+        <a href="{{ url_for('cart') }}" class="btn-hero">Cart</a>
     </div>
 </div>
 

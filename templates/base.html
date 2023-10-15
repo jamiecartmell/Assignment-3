@@ -41,7 +41,6 @@
             </ul>
         </nav>
     </header>
-
     <main>
         {% block main %}
         {% endblock %}
@@ -60,10 +59,12 @@
                 <li><a href="#"><i class='bx bxl-meta'></i></a></li>
             </ul>
             <div class="footer-bottom">
-                <p>Designed By - Jamie Cartmell</p>
+                <a href="{{ url_for('privacy')}}">Privacy Policy</a>
+                <a href="{{ url_for('terms')}}">Terms of Service</a>
+                <p>&copy; 2023 Simply Chef. All rights reserved.</p>
+                <p>Designed and Developed by Jamie Cartmell</p>
             </div>
         </div>
-
     </footer>
 </body>
 <script src="static/script.js "></script>

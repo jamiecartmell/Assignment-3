@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block main %}
 <div class="cart-section">
     <h1>Your Cart</h1>
@@ -17,5 +16,8 @@
     <p>Total items: {% set total_items = 0 %}{% for item in cart %}{% set total_items = total_items + item['quantity']
         %}{% endfor %}{{ total_items }}</p>
     {% endif %}
+</div>
+<div class="btn-checkout">
+    <a href="{{ url_for('checkout') }}" class="btn-hero">Proceed to payment</a>
 </div>
 {% endblock %}
