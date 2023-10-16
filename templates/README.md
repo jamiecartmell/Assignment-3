@@ -9,3 +9,7 @@
 # Simply Chef provides nutritional information for each recipe, helping you stay on top of you health and wellness
 
 # The way Simply Chef works is that you select 5 dishes from the weekly menu that is updated weekly where you pay 50Euro for the 5 selected dishes of your choice
+
+# Render.com
+
+# https://assignment-3-jc-simplychef.onrender.com
